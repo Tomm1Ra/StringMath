@@ -6,7 +6,7 @@ function stringSum(a, b) {
     var maxLen = (a.length > b.length ? a.length : b.length) - 1;
     var d = [];
     var z = 0;
-        var aValue ,bValue;
+    var aValue ,bValue;
     var index;
 
     for (var i = 0; i <= maxLen; i++) {
@@ -25,14 +25,16 @@ function stringSum(a, b) {
 
 
 function fibonacci(n) {
-        for (var i = 2; i < n; i++){      
+    for (var i = 2; i < n; i++){      
         arr[arr.length] = stringSum(arr[arr.length-1] , arr[arr.length -2]); 
         arr.shift();
-}
-     return arr.shift();
+    }
+    if (n==0) return "*";
+    if (n<2) return arr[n-1];
+    return arr.pop();
 }
 
 //for (var i = 2; i < parseInt(process.argv[2],10)+2; i++) 
-var a = fibonacci(parseInt(process.argv[2],10)+1);
+var a = fibonacci(parseInt(process.argv[2],10));
 
 console.log(process.argv[2]+". "+a);
